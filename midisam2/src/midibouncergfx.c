@@ -1,5 +1,6 @@
 #include "f256lib.h"
 #include "../src/midibouncergfx.h"
+#include "../src/muUtils.h"
 
 
 uint16_t midiSpr_x, midiSpr_y;
@@ -39,6 +40,7 @@ graphicsDefineColor(0, 2, 0xFF, 0xFF, 0xFF);
 bitmapSetActive(0);
 spriteDefine(0, SPR_MIDI, 32, 0, 0);
 spriteSetPosition(0, midiSpr_x + 32, midiSpr_y + 32);
+randomSeed(getTimerAbsolute(0));
 }
 
 void updateMIDISprite()

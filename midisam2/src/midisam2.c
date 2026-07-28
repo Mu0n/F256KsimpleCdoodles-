@@ -345,7 +345,7 @@ void zeroOutStuff()
 			shimmerBuffer[i]=14;
 		}
 	}
-	if(myRecord.fileName != NULL) free(myRecord.fileName);
+	free(myRecord.fileName);
 	myRecord.fileName = NULL;
 	initMidiRecord(&myRecord, MUSIC_BASE, MUSIC_BASE);
 }
@@ -506,7 +506,7 @@ uint16_t curLine = 0;
 			setColors();textGotoXY(0,26);printf("->Currently Loading file %s...",name);
 							//at this point, must determine if it's a .VGM or a .SPL
 			const char *extension = name + strlen(name) - 3; //gets last 3 characters
-			
+			lilpause(10);
 			if(strcmp(extension,"spl") == 0) //it's a playlist that has been picked for the first time, feed a .mid into the name string
 				{
 				isPlayListing = true;
@@ -515,6 +515,8 @@ uint16_t curLine = 0;
 				fetchNextPLEntry(playlistFile, &curLine, nbLines); //next .mid gets fetched from an active opened playlist file
 				}
 			fileOpenedErrorCode = loadSMFile(name, MUSIC_BASE); //reaching this point, name WILL carry a .mid file name and it must be opened.
+			//textGotoXY(0,3);printf("Error Code %d...",fileOpenedErrorCode);
+			
 			lilpause(1);
 			} //end of cliFile not found
 		else loadSMFile(name, MUSIC_BASE); //if there was a CL arg, use fetched name to load the mid file
@@ -527,15 +529,16 @@ uint16_t curLine = 0;
 
 		//reset stuff in between file plays, stuff to do after a .mid has been selected
 		wipeStatus();
-		
+		//textGotoXY(0,3);printf(".W");
 		detectStructure(0, &myRecord);
+		//textGotoXY(2,3);printf(".D");
 		displayInfo(&myRecord);
 		initTrack(MUSIC_BASE);
+		
+		//textGotoXY(4,3);printf(".i");
 			//find what to do and exhaust all zero delay events at the start
 		for(uint16_t i=0;i<theOne.nbTracks;i++)	exhaustZeroes(i);
-		resetTimer0();			
-		shimmerTimer.absolute = getTimerAbsolute(TIMER_FRAMES)+TIMER_SHIMMER_DELAY;
-		setTimer(&shimmerTimer);
+		
 		
 		superExtraInfo(&myRecord, midiChip);		
 	
@@ -548,17 +551,21 @@ uint16_t curLine = 0;
 		//file playing
 		isPaused = false;
 		
+		
+		resetTimer0();			
+		shimmerTimer.absolute = getTimerAbsolute(TIMER_FRAMES)+TIMER_SHIMMER_DELAY;
+		setTimer(&shimmerTimer);
+		
 			for(;;)
 				{
 				kernelNextEvent();
-				int8_t loopStatus = optimizedMIDIShimmering();
+				int8_t loopStatus = optimizedMIDIShimmering(); //animations and does keypresses
 				if(loopStatus == 1) break; //ESC quits the program
 				if(loopStatus == 2) //F3 load was pressed
 					{
 					isPlayListing = false; //break out of playlist playing mode and load something
 					break;
 					}
-				if(loopStatus == 3) break; //skips to next tune
 
 				if(!isPaused)
 					{
@@ -575,7 +582,7 @@ uint16_t curLine = 0;
 						}
 					
 					}	
-				if(theOne.isMasterDone >= theOne.nbTracks) 
+				if(theOne.isMasterDone >= theOne.nbTracks || loopStatus==3) //end of song or tab pressed
 					{
 					if(repeatFlag) 
 						{
@@ -591,6 +598,7 @@ uint16_t curLine = 0;
 					textSetColor(1,0);textGotoXY(3,27);textPrint("[r]");
 
 					
+					resetTimer0();
 					shimmerTimer.absolute = getTimerAbsolute(TIMER_FRAMES)+TIMER_SHIMMER_DELAY;
 					setTimer(&shimmerTimer);
 						}

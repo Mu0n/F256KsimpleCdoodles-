@@ -81,14 +81,14 @@ void initMidiRecord(struct midiRecord *rec, uint32_t baseAddr, uint32_t parsedAd
 	rec->baseAddr=baseAddr;
 	rec->parsedAddr=parsedAddr;
 }
-
+/*
 void initBigList(struct bigParsedEventList *list)
 {
 	list->hasBeenUsed = false;
 	list->trackcount = 0;
 	list->TrackEventList = (aTOEPtr)NULL;
 }
-
+*/
 //gets a count of the total MIDI events that are relevant and left to play	
 uint32_t getTotalLeft(struct bigParsedEventList *list)
 	{
@@ -102,4 +102,4 @@ uint32_t getTotalLeft(struct bigParsedEventList *list)
 	return sum;
 	}	
 	
-}
+

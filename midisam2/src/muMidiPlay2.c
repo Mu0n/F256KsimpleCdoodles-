@@ -216,6 +216,23 @@ uint8_t readMIDIEvent(uint8_t track) {
 
 //reads the time delta
 uint32_t readDelta(uint8_t track) {
+	uint32_t value = 0;
+	uint8_t temp;
+	
+	//min count needed for describing the delta: 1; max is 4
+	temp = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset++);
+	while(temp & 0x80) //keep reading after this one
+		{
+		temp &= 0x7F; //only keep lowest 7 bits
+		value += (uint32_t) temp; //add it to the pile
+		value <<= 7; //shift the pile 7 spots to make room
+		temp = FAR_PEEK(theOne.tracks[track].start + theOne.tracks[track].offset++); //get the next one
+		}
+	value += (uint32_t)temp; //final addition to close it off
+	return value;
+	
+	//old clunky version
+	/*
 	uint32_t nValue, nValue2, nValue3, nValue4;
 	uint8_t temp;
 	
@@ -258,6 +275,7 @@ uint32_t readDelta(uint8_t track) {
 			} //end of getting to nValue3
 		} //end of getting to nValue2	
 	return nValue | nValue2 | nValue3 | nValue4;
+	*/
 }
 
 uint8_t readMIDICmd(uint8_t track) {
@@ -353,6 +371,8 @@ uint8_t readMIDICmd(uint8_t track) {
 }
 
 uint8_t skipWhenFFCmd(uint8_t track, uint8_t meta_byte, uint8_t data_byte) {	
+	theOne.tracks[track].offset+=(uint32_t)(2+data_byte);
+	/*
 	if(meta_byte == MetaSequence || meta_byte == MetaChannelPrefix || meta_byte == MetaChangePort)
 		{
 		theOne.tracks[track].offset+=(uint32_t)3;
@@ -386,6 +406,9 @@ uint8_t skipWhenFFCmd(uint8_t track, uint8_t meta_byte, uint8_t data_byte) {
 	else if(meta_byte == MetaSequencerSpecific)
 		{
 		}
+		*/
+		
+		
 	return 0;
 }
 
@@ -515,7 +538,11 @@ void initTrack(uint32_t BASE_ADDR){
 	
 	//read number of tracks
 	theOne.nbTracks = readBigEndian16(BASE_ADDR+(uint32_t)10);
+	
+	if(theOne.tracks != NULL) free(theOne.tracks);
+	theOne.tracks = NULL;
 	theOne.tracks = (MIDTrackP *)malloc(sizeof(MIDTrackP) * theOne.nbTracks);
+	
 	theOne.isWaiting = false;
 	theOne.timer0PerTick = 500000;
 	theOne.cuedDelta = 0xFFFFFFFF;
@@ -572,7 +599,7 @@ void initTrack(uint32_t BASE_ADDR){
 }
 
 void destroyTrack(){
-	free(theOne.tracks);
+	if(theOne.tracks != NULL) free(theOne.tracks);
 	theOne.tracks = NULL;
 
 }
