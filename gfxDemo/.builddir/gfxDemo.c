@@ -1,4 +1,4 @@
-#include "D:\F256\llvm-mos\code\gfxdemo\.builddir\trampoline.h"
+#include "D:\F256\llvm-mos\code\gfxDemo\.builddir\trampoline.h"
 
 #define F256LIB_IMPLEMENTATION
 #include "f256lib.h"

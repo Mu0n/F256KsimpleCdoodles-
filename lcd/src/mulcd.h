@@ -5,20 +5,13 @@
 #define LCD_CMD_CMD 0xDD40  //Write Command Here
 #define LCD_RST 0x10        //0 to Reset (RSTn)
 #define LCD_BL  0x20        //1 = ON, 0 = OFF 
-#define LCD_MADCTL  0x0B    //Read Dislay MDCTL
-#define LCD_MADCTL_MY  0x80 //MY: 1=reverse
-#define LCD_MADCTL_MX  0x40 //MX: 1=reverse
-#define LCD_MADCTL_MV  0x20 //MV: 1 row/col exchange
-#define LCD_MADCTL_ML  0x10 //ML: 1=refresh bot to top
-
 #define LCD_WIN_X 0x2A    // window X command 
 #define LCD_WIN_Y 0x2B    // window Y command
 #define LCD_WRI   0x2C    //write command
 #define LCD_RD    0x2E    //read  command
+#define LCD_MAD   0x36    //MADCTL control register
+#define LCD_TE  0x40        //Tear Enable (avoid updating the display while the controller reads its value)
 
-
-//Read Only
-#define LCD_TE  0x40        //Tear Enable 
 #define LCD_CMD_DTA 0xDD41  //Write Data (For Command) Here
 //Always Write in Pairs, otherwise the State Machine will Lock
 #define LCD_PIX_LO   0xDD42 //{G[2:0], B[4:0]}
@@ -34,8 +27,6 @@
 #include "f256lib.h"
 
 
-void clearVisible(uint16_t);
-void displayImage(uint32_t);
-void gotoLCDXY(uint8_t, uint16_t);
+void displayImage(uint32_t, uint8_t);
 
 #endif // MULCD_H

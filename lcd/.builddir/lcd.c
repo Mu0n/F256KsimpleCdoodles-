@@ -6,7 +6,7 @@
 #include "../src/muUtils.h" //contains helper functions I often use
 #include "../src/mulcd.h" //contains functions for the K2 LCD
 
-EMBED(mac, "../assets/wildbits.bin", 0x10000);
+EMBED(mac, "../assets/IDLM.bin", 0x10000);
 
 int main(int argc, char *argv[]) {
 	
@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 	if(hasCaseLCD() && isAnyK())
 	{
     textPrint("K2 detected. custom LCD image loading on the screen case.");
-	displayImage(0x10000);
+	displayImage(0x10000,1);
 	}
 	else
 	{

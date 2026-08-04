@@ -78,7 +78,7 @@
       e7       e7        0     1 __zp_bss_size = SIZEOF(.zp.bss)
       e7       e7        9     1 .zp
       e7       e7        9     1         skull.lto.o:(.zp.noinit)
-     3a8      3a8     3df1     2 .text
+     3a8      3a8     2cca     2 .text
      3a8      3a8        0     1         _init = .
      3a8      3a8        0     1         _start = .
      3a8      3a8        8     1         D:\F256\llvm-mos\f256dev\llvm-mos\bin/../mos-platform/f256/lib\libcrt0.a(init-stack.S.obj):(.init.100)
@@ -107,75 +107,75 @@
      599      599        0     1                 mathFloatSub
      5ea      5ea        0     1                 mathFloatMul
      639      639        0     1                 mathFloatDiv
-     68d      68d       1d     1         skull.lto.o:(.text.midiShutUp)
-     68d      68d       1d     1                 midiShutUp
-     6aa      6aa       93     1         skull.lto.o:(.text.resetInstruments)
-     6aa      6aa       93     1                 resetInstruments
-     73d      73d      445     1         skull.lto.o:(.text.f256Init)
-     73d      73d      445     1                 f256Init
-     b82      b82        6     1         skull.lto.o:(.text.main)
-     b82      b82        6     1                 main
-     b88      b88     1d62     1         skull.lto.o:(.text.f256main)
-     b88      b88     1d62     1                 f256main
-    28ea     28ea      300     1         skull.lto.o:(.text.bitmapClear)
-    28ea     28ea      300     1                 bitmapClear
-    2bea     2bea      821     1         skull.lto.o:(.text.rotateX)
-    2bea     2bea      821     1                 rotateX
-    340b     340b      a3f     1         skull.lto.o:(.text.redraw)
-    340b     340b      a3f     1                 redraw
-    3e4a     3e4a        5     1         skull.lto.o:(.text.exit)
-    3e4a     3e4a        5     1                 exit
-    3e4f     3e4f      2cc     1         skull.lto.o:(.text.malloc)
-    3e4f     3e4f      2cc     1                 malloc
-    411b     411b       2c     1         skull.lto.o:(.text.memcpy)
-    411b     411b       2c     1                 memcpy
-    4147     4147       20     1         skull.lto.o:(.text.__memset)
-    4147     4147       20     1                 __memset
-    4167     4167       32     1         skull.lto.o:(.text.__mulhi3)
-    4167     4167       32     1                 __mulhi3
-    4199     4199        0     1         __init_array_start = .
-    4199     4199        0     1         __init_array_end = .
-    4199     4199        0     1         __fini_array_start = .
-    4199     4199        0     1         __fini_array_end = .
-    4199     4199       e4     1 .rodata
-    4199     4199       b4     1         skull.lto.o:(.rodata.f256main)
-    424d     424d       30     1         skull.lto.o:(.rodata.textColors)
-    424d     424d       30     1                 textColors
-    427d     427d        0     1 .data
-    427d     427d        0     1         __data_start = .
-    427d     427d        0     1         __data_end = .
-    427d     427d        0     1 __data_load_start = LOADADDR(.data)
-    427d     427d        0     1 __data_size = SIZEOF(.data)
-    427d     427d       15     1 .bss
-    427d     427d        0     1         __bss_start = .
-    427d     427d        1     1         skull.lto.o:(.bss.g_fp_last_status)
-    427d     427d        1     1                 g_fp_last_status
-    427e     427e        7     1         skull.lto.o:(.bss.kernelEventData)
-    427e     427e        7     1                 kernelEventData
-    4285     4285        1     1         skull.lto.o:(.bss.kernelError)
-    4285     4285        1     1                 kernelError
-    4286     4286        c     1         skull.lto.o:(.bss._BITMAP_BASE)
-    4286     4286        c     1                 _BITMAP_BASE
-    4292     4292        0     1         __bss_end = .
-    4292     4292        0     1 __bss_size = SIZEOF(.bss)
-    4292     4292        0     1 .noinit
-    4292     4292        0     1         __heap_start = ALIGN(., 2)
-    4292     4292        0     1 end_block8 = .
-    4292     4292        0     1 end_block9 = .
-    4292     4292        0     1 end_block10 = .
-    4292     4292        0     1 end_block11 = .
-    4292     4292        0     1 end_block12 = .
-    4292     4292        0     1 end_block13 = .
-    4292     4292        0     1 end_block14 = .
-    4292     4292        0     1 end_block15 = .
-    4292     4292        0     1 end_block16 = .
-    4292     4292        0     1 end_block17 = .
-    4292     4292        0     1 end_block18 = .
-    4292     4292        0     1 end_block19 = .
-    4292     4292        0     1 end_block20 = .
-    4292     4292        0     1 end_block21 = .
-    4292     4292        0     1 end_block22 = .
-    4292     4292        0     1 end_block23 = .
+     68d      68d       14     1         skull.lto.o:(.text.midiShutUp)
+     68d      68d       14     1                 midiShutUp
+     6a1      6a1       23     1         skull.lto.o:(.text.resetInstruments)
+     6a1      6a1       23     1                 resetInstruments
+     6c4      6c4      3e6     1         skull.lto.o:(.text.f256Init)
+     6c4      6c4      3e6     1                 f256Init
+     aaa      aaa        6     1         skull.lto.o:(.text.main)
+     aaa      aaa        6     1                 main
+     ab0      ab0     1272     1         skull.lto.o:(.text.f256main)
+     ab0      ab0     1272     1                 f256main
+    1d22     1d22       ad     1         skull.lto.o:(.text.bitmapClear)
+    1d22     1d22       ad     1                 bitmapClear
+    1dcf     1dcf      20e     1         skull.lto.o:(.text.rotateX)
+    1dcf     1dcf      20e     1                 rotateX
+    1fdd     1fdd      d46     1         skull.lto.o:(.text.redraw)
+    1fdd     1fdd      d46     1                 redraw
+    2d23     2d23        5     1         skull.lto.o:(.text.exit)
+    2d23     2d23        5     1                 exit
+    2d28     2d28      2cc     1         skull.lto.o:(.text.malloc)
+    2d28     2d28      2cc     1                 malloc
+    2ff4     2ff4       2c     1         skull.lto.o:(.text.memcpy)
+    2ff4     2ff4       2c     1                 memcpy
+    3020     3020       20     1         skull.lto.o:(.text.__memset)
+    3020     3020       20     1                 __memset
+    3040     3040       32     1         skull.lto.o:(.text.__mulhi3)
+    3040     3040       32     1                 __mulhi3
+    3072     3072        0     1         __init_array_start = .
+    3072     3072        0     1         __init_array_end = .
+    3072     3072        0     1         __fini_array_start = .
+    3072     3072        0     1         __fini_array_end = .
+    3072     3072       42     1 .rodata
+    3072     3072       12     1         skull.lto.o:(.rodata.f256main)
+    3084     3084       30     1         skull.lto.o:(.rodata.textColors)
+    3084     3084       30     1                 textColors
+    30b4     30b4        0     1 .data
+    30b4     30b4        0     1         __data_start = .
+    30b4     30b4        0     1         __data_end = .
+    30b4     30b4        0     1 __data_load_start = LOADADDR(.data)
+    30b4     30b4        0     1 __data_size = SIZEOF(.data)
+    30b4     30b4       15     1 .bss
+    30b4     30b4        0     1         __bss_start = .
+    30b4     30b4        1     1         skull.lto.o:(.bss.g_fp_last_status)
+    30b4     30b4        1     1                 g_fp_last_status
+    30b5     30b5        7     1         skull.lto.o:(.bss.kernelEventData)
+    30b5     30b5        7     1                 kernelEventData
+    30bc     30bc        1     1         skull.lto.o:(.bss.kernelError)
+    30bc     30bc        1     1                 kernelError
+    30bd     30bd        c     1         skull.lto.o:(.bss._BITMAP_BASE)
+    30bd     30bd        c     1                 _BITMAP_BASE
+    30c9     30c9        0     1         __bss_end = .
+    30c9     30c9        0     1 __bss_size = SIZEOF(.bss)
+    30c9     30c9        0     1 .noinit
+    30c9     30c9        0     1         __heap_start = ALIGN(., 2)
+    30c9     30c9        0     1 end_block8 = .
+    30c9     30c9        0     1 end_block9 = .
+    30c9     30c9        0     1 end_block10 = .
+    30c9     30c9        0     1 end_block11 = .
+    30c9     30c9        0     1 end_block12 = .
+    30c9     30c9        0     1 end_block13 = .
+    30c9     30c9        0     1 end_block14 = .
+    30c9     30c9        0     1 end_block15 = .
+    30c9     30c9        0     1 end_block16 = .
+    30c9     30c9        0     1 end_block17 = .
+    30c9     30c9        0     1 end_block18 = .
+    30c9     30c9        0     1 end_block19 = .
+    30c9     30c9        0     1 end_block20 = .
+    30c9     30c9        0     1 end_block21 = .
+    30c9     30c9        0     1 end_block22 = .
+    30c9     30c9        0     1 end_block23 = .
    50000    50000     561a    16 .canyon
    50000    50000     561a    16         skull.lto.o:(.canyon)
    50000    50000        0     1                 canyon_start

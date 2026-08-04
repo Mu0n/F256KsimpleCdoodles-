@@ -69,7 +69,7 @@
       3c       3c        0     1 __zp_bss_size = SIZEOF(.zp.bss)
       3c       3c       60     1 .zp
       3c       3c       60     1         textColors.lto.o:(.zp.noinit)
-     301      301     1c86     1 .text
+     301      301     1a9e     1 .text
      301      301        0     1         _init = .
      301      301        0     1         _start = .
      301      301        8     1         D:\F256\llvm-mos\f256dev\llvm-mos\bin/../mos-platform/f256/lib\libcrt0.a(init-stack.S.obj):(.init.100)
@@ -91,69 +91,71 @@
      32c      32c       13     1                 __zero_zp_bss
      33f      33f       17     1         D:\F256\llvm-mos\f256dev\llvm-mos\bin/../mos-platform/f256/lib\libcrt0.a(copy-zp-data.c.obj):(.text.__copy_zp_data)
      33f      33f       17     1                 __copy_zp_data
-     356      356      904     1         textColors.lto.o:(.text.main)
-     356      356      904     1                 main
-     c5a      c5a      183     1         textColors.lto.o:(.text.oldText)
-     c5a      c5a      183     1                 oldText
-     ddd      ddd      1f9     1         textColors.lto.o:(.text.textPrint)
-     ddd      ddd      1f9     1                 textPrint
-     fd6      fd6        5     1         textColors.lto.o:(.text.exit)
-     fd6      fd6        5     1                 exit
-     fdb      fdb       df     1         textColors.lto.o:(.text._ZN12_GLOBAL__N_13putEcP6Status)
-     fdb      fdb       df     1                 (anonymous namespace)::put(char, Status*)
-    10ba     10ba      10f     1         textColors.lto.o:(.text._ZN12_GLOBAL__N_112print_stringEPKcP6Status)
-    10ba     10ba      10f     1                 (anonymous namespace)::print_string(char const*, Status*)
-    11c9     11c9      d72     1         textColors.lto.o:(.text.printf)
-    11c9     11c9      d72     1                 printf
-    1f3b     1f3b       2c     1         textColors.lto.o:(.text.memcpy)
-    1f3b     1f3b       2c     1                 memcpy
-    1f67     1f67       20     1         textColors.lto.o:(.text.__memset)
-    1f67     1f67       20     1                 __memset
-    1f87     1f87        0     1         __init_array_start = .
-    1f87     1f87        0     1         __init_array_end = .
-    1f87     1f87        0     1         __fini_array_start = .
-    1f87     1f87        0     1         __fini_array_end = .
-    1f87     1f87       c7     1 .rodata
-    1f87     1f87        1     1         D:\F256\llvm-mos\f256dev\llvm-mos\bin/../mos-platform/common/lib\libcrt.a(const.S.obj):(.rodata)
-    1f87     1f87        0     1                 __set_v
-    1f88     1f88       3a     1         textColors.lto.o:(.rodata.printf)
-    1fc2     1fc2       30     1         textColors.lto.o:(.rodata.textColors)
-    1fc2     1fc2       30     1                 textColors
-    1ff2     1ff2       5c     1         <internal>:(.rodata.str1.1)
-    204e     204e        0     1 .data
-    204e     204e        0     1         __data_start = .
-    204e     204e        0     1         __data_end = .
-    204e     204e        0     1 __data_load_start = LOADADDR(.data)
-    204e     204e        0     1 __data_size = SIZEOF(.data)
-    204e     204e        1     1 .bss
-    204e     204e        0     1         __bss_start = .
-    204e     204e        1     1         textColors.lto.o:(.bss.kernelError)
-    204e     204e        1     1                 kernelError
-    204f     204f        0     1         __bss_end = .
-    204f     204f        0     1 __bss_size = SIZEOF(.bss)
-    204f     204f        0     1 .noinit
-    204f     204f        0     1         __heap_start = ALIGN(., 2)
-    204f     204f        0     1 end_block8 = .
-    204f     204f        0     1 end_block9 = .
-    204f     204f        0     1 end_block10 = .
-    204f     204f        0     1 end_block11 = .
-    204f     204f        0     1 end_block12 = .
-    204f     204f        0     1 end_block13 = .
-    204f     204f        0     1 end_block14 = .
-    204f     204f        0     1 end_block15 = .
-    204f     204f        0     1 end_block16 = .
-    204f     204f        0     1 end_block17 = .
-    204f     204f        0     1 end_block18 = .
-    204f     204f        0     1 end_block19 = .
-    204f     204f        0     1 end_block20 = .
-    204f     204f        0     1 end_block21 = .
-    204f     204f        0     1 end_block22 = .
-    204f     204f        0     1 end_block23 = .
+     356      356       a1     1         textColors.lto.o:(.text.textClear)
+     356      356       a1     1                 textClear
+     3f7      3f7      74b     1         textColors.lto.o:(.text.main)
+     3f7      3f7      74b     1                 main
+     b42      b42       de     1         textColors.lto.o:(.text.oldText)
+     b42      b42       de     1                 oldText
+     c20      c20      1ce     1         textColors.lto.o:(.text.textPrint)
+     c20      c20      1ce     1                 textPrint
+     dee      dee        5     1         textColors.lto.o:(.text.exit)
+     dee      dee        5     1                 exit
+     df3      df3       df     1         textColors.lto.o:(.text._ZN12_GLOBAL__N_13putEcP6Status)
+     df3      df3       df     1                 (anonymous namespace)::put(char, Status*)
+     ed2      ed2      10f     1         textColors.lto.o:(.text._ZN12_GLOBAL__N_112print_stringEPKcP6Status)
+     ed2      ed2      10f     1                 (anonymous namespace)::print_string(char const*, Status*)
+     fe1      fe1      d72     1         textColors.lto.o:(.text.printf)
+     fe1      fe1      d72     1                 printf
+    1d53     1d53       2c     1         textColors.lto.o:(.text.memcpy)
+    1d53     1d53       2c     1                 memcpy
+    1d7f     1d7f       20     1         textColors.lto.o:(.text.__memset)
+    1d7f     1d7f       20     1                 __memset
+    1d9f     1d9f        0     1         __init_array_start = .
+    1d9f     1d9f        0     1         __init_array_end = .
+    1d9f     1d9f        0     1         __fini_array_start = .
+    1d9f     1d9f        0     1         __fini_array_end = .
+    1d9f     1d9f       c7     1 .rodata
+    1d9f     1d9f        1     1         D:\F256\llvm-mos\f256dev\llvm-mos\bin/../mos-platform/common/lib\libcrt.a(const.S.obj):(.rodata)
+    1d9f     1d9f        0     1                 __set_v
+    1da0     1da0       3a     1         textColors.lto.o:(.rodata.printf)
+    1dda     1dda       30     1         textColors.lto.o:(.rodata.textColors)
+    1dda     1dda       30     1                 textColors
+    1e0a     1e0a       5c     1         <internal>:(.rodata.str1.1)
+    1e66     1e66        0     1 .data
+    1e66     1e66        0     1         __data_start = .
+    1e66     1e66        0     1         __data_end = .
+    1e66     1e66        0     1 __data_load_start = LOADADDR(.data)
+    1e66     1e66        0     1 __data_size = SIZEOF(.data)
+    1e66     1e66        1     1 .bss
+    1e66     1e66        0     1         __bss_start = .
+    1e66     1e66        1     1         textColors.lto.o:(.bss.kernelError)
+    1e66     1e66        1     1                 kernelError
+    1e67     1e67        0     1         __bss_end = .
+    1e67     1e67        0     1 __bss_size = SIZEOF(.bss)
+    1e67     1e67        0     1 .noinit
+    1e67     1e67        0     1         __heap_start = ALIGN(., 2)
+    1e67     1e67        0     1 end_block8 = .
+    1e67     1e67        0     1 end_block9 = .
+    1e67     1e67        0     1 end_block10 = .
+    1e67     1e67        0     1 end_block11 = .
+    1e67     1e67        0     1 end_block12 = .
+    1e67     1e67        0     1 end_block13 = .
+    1e67     1e67        0     1 end_block14 = .
+    1e67     1e67        0     1 end_block15 = .
+    1e67     1e67        0     1 end_block16 = .
+    1e67     1e67        0     1 end_block17 = .
+    1e67     1e67        0     1 end_block18 = .
+    1e67     1e67        0     1 end_block19 = .
+    1e67     1e67        0     1 end_block20 = .
+    1e67     1e67        0     1 end_block21 = .
+    1e67     1e67        0     1 end_block22 = .
+    1e67     1e67        0     1 end_block23 = .
        0        0      138     1 .comment
        0        0      138     1         <internal>:(.comment)
-       0        0      770     4 .symtab
-       0        0      770     4         <internal>:(.symtab)
+       0        0      780     4 .symtab
+       0        0      780     4         <internal>:(.symtab)
        0        0       5a     1 .shstrtab
        0        0       5a     1         <internal>:(.shstrtab)
-       0        0      53a     1 .strtab
-       0        0      53a     1         <internal>:(.strtab)
+       0        0      544     1 .strtab
+       0        0      544     1         <internal>:(.strtab)
